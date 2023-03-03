@@ -1,0 +1,23 @@
+{
+  "name": "sign-up-collect-emails-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Korab44/sign-up-collect-emails-.git"
+  },
+  "author": "Korab Morina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Korab44/sign-up-collect-emails-/issues"
+  },
+  "homepage": "https://github.com/Korab44/sign-up-collect-emails-#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2"
+  }
+}
