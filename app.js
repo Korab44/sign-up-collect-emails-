@@ -13,7 +13,7 @@ app.get('/', function(req, res) {
     res.sendFile(__dirname + '/signup.html');
 })
 
-    app.post('/', function(request, response) {
+app.post('/', function(request, respo) {
         const firstName = request.body.fname;
         const lastName = request.body.lname;
         const email = request.body.email;
@@ -40,14 +40,23 @@ app.get('/', function(req, res) {
             auth: "korab1:ca32e3c1ebd1fb5b1a280ab768655d28-us18"
         }
         const request1 = https.request(url, options, function(response) {
+            
+            if (response.statusCode === 200) {
+                respo.sendFile(__dirname + "/success.html");
+            } else {
+                respo.sendFile(__dirname + "/failure.html");
+            }
+
             response.on("data", function(data) {
                 console.log(JSON.parse(data));
             })
         })
-        request1.write(jsonData);
+        // request1.write(jsonData);
         request1.end();
      })
-
+     app.post('/failure', function(req, res) {
+        res.redirect('/');
+     })
 
 app.listen(3000, function() {
     console.log('Server is running on port 3000')
